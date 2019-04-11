@@ -1,0 +1,642 @@
+<!--引用文章的Head头部-->
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+
+
+    <title>hexo 主题文档 | PM小站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、 主题配置：theme/_config.yml主题各配置项123456789101112- menu                     # 控制导航菜单- customize                # 个性化内容-- logo                    # 设置logo以及logo的样式-- profile                 # 设置网站简介，包括作者，">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 主题文档">
+<meta property="og:url" content="http://iliwei.github.io/2018/09/22/hexo-theme-guide/index.html">
+<meta property="og:site_name" content="PM小站">
+<meta property="og:description" content="一、 主题配置：theme/_config.yml主题各配置项123456789101112- menu                     # 控制导航菜单- customize                # 个性化内容-- logo                    # 设置logo以及logo的样式-- profile                 # 设置网站简介，包括作者，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-11T08:55:32.064Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo 主题文档">
+<meta name="twitter:description" content="一、 主题配置：theme/_config.yml主题各配置项123456789101112- menu                     # 控制导航菜单- customize                # 个性化内容-- logo                    # 设置logo以及logo的样式-- profile                 # 设置网站简介，包括作者，">
+    
+
+    
+    
+    <!--控制favicon-->
+    
+        <link rel="icon" href="http://pbv1ud0vb.bkt.clouddn.com/favicon.ico" />
+    
+    
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-brands.min.css">
+    <link rel="stylesheet" href="/libs/font-awesome5/css/fa-solid.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+       <!--网站的导航-->
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <!--文章标题，读取config中的title-->
+                <span class="site-title">PM小站</span>
+                <link rel="icon" type="image/x-icon" href="/favicon.ico">
+                
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">笔记</a>
+                
+                    <a class="main-nav-link" href="/categories">类别</a>
+                
+                    <a class="main-nav-link" href="/works">作品</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://www.gravatar.com/avatar/efc88628aec8da72714f08932eda64b2" />
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">笔记</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">类别</a></td>
+                
+                    <td><a class="main-nav-link" href="/works">作品</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                <!--简介-->
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/efc88628aec8da72714f08932eda64b2?s=128" />
+            <h2 id="name">liwei</h2>
+            <h3 id="title">Project &amp; Product</h3>
+            <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>shanghai, China</span>
+            <a id="follow" target="_blank" href="https://github.com/iamliwei/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                13
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                12
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/iamliwei" target="_blank" title="github" class=tooltip>
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://u.wechat.com/MEROWhi5kp6N1eLWnkI1EO0" target="_blank" title="weixin" class=tooltip>
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/3214650223/profile?topnav=1&wvr=6" target="_blank" title="weibo" class=tooltip>
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/lee.raboo" target="_blank" title="facebook" class=tooltip>
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <!--文章主题内容-->
+            <section id="main"><article id="post-hexo-theme-guide" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+               
+            <header class="article-header">
+               
+                <!--显示文章的标题-->
+                
+    
+        <h1 class="article-title" itemprop="name">
+            hexo 主题文档
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        <!--首页显示时间和标签内容-->
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2018/09/22/hexo-theme-guide/">
+            <time datetime="2018-09-22T04:58:46.000Z" itemprop="datePublished">2018-09-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+         
+     
+
+        
+        <div class="article-entry " itemprop="articleBody">
+             <!-- 控制文章内容显示-->
+          
+           
+            
+            
+            
+              <!--如果不是首页则玩显示-->
+              <h3 id="一、-主题配置：theme-config-yml"><a href="#一、-主题配置：theme-config-yml" class="headerlink" title="一、 主题配置：theme/_config.yml"></a>一、 主题配置：theme/_config.yml</h3><p>主题各配置项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">- menu                     # 控制导航菜单</span><br><span class="line">- customize                # 个性化内容</span><br><span class="line">-- logo                    # 设置logo以及logo的样式</span><br><span class="line">-- profile                 # 设置网站简介，包括作者，作者头衔等信息</span><br><span class="line">-- social_links            # 设置网站等社交链接，如github</span><br><span class="line">- Widgets                  # 控制侧边栏显示的模块</span><br><span class="line">- post                     # 文章显示控制</span><br><span class="line">- search                   # 搜索设置，支持站内搜索、和百度搜索等</span><br><span class="line">- comment                  # 评论控制 支持disques、duoshuo等多种评论</span><br><span class="line">- share                    # 分享功能控制，支持jiathis、bdshare等分享功能</span><br><span class="line">- plugins                  # 插件使用</span><br><span class="line">- 其他                      # 其他控制，如友情链接等；</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、-系统语言配置：languages"><a href="#二、-系统语言配置：languages" class="headerlink" title="二、 系统语言配置：languages"></a>二、 系统语言配置：languages</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">    用于控制网站主题语言，在config文件中将language设置对应的语言即可;</span><br><span class="line">    只改变index、nav、widget、article、profile、insight等模块等固定字段显示.</span><br><span class="line">    </span><br><span class="line">```   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 三、 布局：layout</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##### 1. 主配置</span><br><span class="line"></span><br><span class="line">（1）archive.ejs</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">&lt;div class=&quot;timeline timeline-wrap&quot;&gt;</span><br><span class="line">    &lt;% var last;</span><br><span class="line">    page.posts.each(function(post, i) &#123;</span><br><span class="line">        var year = post.date.year();</span><br><span class="line">        if (last != year) &#123;</span><br><span class="line">            last = year; %&gt;</span><br><span class="line">            &lt;div class=&quot;timeline-row timeline-row-major&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;node&quot;&gt;&lt;i class=&quot;fas fa-calendar-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;</span><br><span class="line">                &lt;h1 class=&quot;title&quot;&gt;&lt;%= year %&gt;&lt;/h1&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">        &lt;!--时间线样式路径source/css/timeline.styl--&gt;</span><br><span class="line">        &lt;div class=&quot;timeline-row&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;node&quot;&gt;&lt;/span&gt;</span><br><span class="line">            &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">               &lt;!--文章获取标题并显示--&gt;</span><br><span class="line">                &lt;%- partial(&apos;common/post/title&apos;, &#123; post: post, index: true, class_name: &apos;timeline-article-title&apos; &#125;) %&gt;</span><br><span class="line">                &lt;div class=&quot;article-meta&quot;&gt;</span><br><span class="line">                   &lt;!--获取文章的时间、归类和标签--&gt;</span><br><span class="line">                    &lt;%- partial(&apos;common/post/date&apos;, &#123; post: post, class_name: &apos;article-date&apos;, date_format: null &#125;) %&gt;</span><br><span class="line">                    &lt;%- partial(&apos;common/post/category&apos;, &#123; post: post &#125;) %&gt;</span><br><span class="line">                    &lt;%- partial(&apos;common/post/tag&apos;, &#123; post: post &#125;) %&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;% &#125;); %&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% if (page.total &gt; 1) &#123; %&gt;</span><br><span class="line">    &lt;nav id=&quot;page-nav&quot;&gt;</span><br><span class="line">        &lt;%- paginator(&#123;</span><br><span class="line">            prev_text: &apos;&amp;laquo; &apos; + __(&apos;nav.prev&apos;),</span><br><span class="line">            next_text: __(&apos;nav.next&apos;) + &apos; &amp;raquo;&apos;</span><br><span class="line">        &#125;) %&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>（2）categories.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--样式在style.styl--&gt;</span><br><span class="line">&lt;section class=&quot;layout-wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;layout-title&quot;&gt;</span><br><span class="line">        &lt;span&gt;&lt;%= page.title %&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;layout-wrap-inner list-categories&quot;&gt;</span><br><span class="line">        &lt;!--如果网站的categroies长度不为0，则列出出网站categroies--&gt;</span><br><span class="line">        &lt;% if(site.categories.length) &#123; %&gt;</span><br><span class="line">            &lt;%- list_categories(site.categories) %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure>
+<p>（3）index.ejs </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;% page.posts.each(function(post) &#123; %&gt;</span><br><span class="line">    &lt;%- partial(&apos;common/article&apos;, &#123; post: post, index: true &#125;) %&gt;</span><br><span class="line">&lt;% &#125;);</span><br><span class="line">if (page.total &gt; 1) &#123; %&gt;</span><br><span class="line">    &lt;nav id=&quot;page-nav&quot;&gt;</span><br><span class="line">        &lt;%- paginator(&#123;</span><br><span class="line">            prev_text: &apos;&amp;laquo; &apos; + __(&apos;nav.prev&apos;),</span><br><span class="line">            next_text: __(&apos;nav.next&apos;) + &apos; &amp;raquo;&apos;</span><br><span class="line">        &#125;) %&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>（4）layout.ejs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引用文章的Head头部模版--&gt;</span><br><span class="line">&lt;%- partial(&apos;common/head&apos;) %&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;container&quot;&gt;</span><br><span class="line">       &lt;!--网站的导航模版--&gt;</span><br><span class="line">        &lt;%- partial(&apos;common/header&apos;) %&gt;</span><br><span class="line">        &lt;div class=&quot;outer&quot;&gt;</span><br><span class="line">            &lt;% if (theme.customize.profile.enabled) &#123; %&gt;</span><br><span class="line">                &lt;!--简介模版--&gt;</span><br><span class="line">                &lt;%- partial(&apos;common/profile&apos;, null, &#123;cache: !config.relative_link&#125;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line">            &lt;!--文章主题内容--&gt;</span><br><span class="line">            &lt;section id=&quot;main&quot;&gt;&lt;%- body %&gt;&lt;/section&gt;</span><br><span class="line">            &lt;% if (theme.customize.sidebar) &#123; %&gt;</span><br><span class="line">               &lt;!--网站的侧边栏模版·--&gt;</span><br><span class="line">                &lt;%- partial(&apos;common/sidebar&apos;, null, &#123;cache: !config.relative_link&#125;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!--网站的脚部文件模版--&gt;</span><br><span class="line">        &lt;%- partial(&apos;common/footer&apos;, null, &#123;cache: !config.relative_link&#125;) %&gt;</span><br><span class="line">        &lt;!--网页的scrpit文件--&gt;</span><br><span class="line">        &lt;%- partial(&apos;common/scripts&apos;) %&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（5）post.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引用commen/article.ej文章模版--&gt;</span><br><span class="line">&lt;%- partial(&apos;common/article&apos;, &#123;post: page, index: false&#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p>（6）tag.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 输出标签post文章中的tag数据到/common下的timeline.ejs中　</span><br><span class="line">&lt;%- partial(&apos;common/timeline&apos;, &#123; type: &apos;tag&apos; &#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p>（7）tags.ejs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--CSS样式路径：source/css/archive.styl--&gt;</span><br><span class="line">&lt;section class=&quot;layout-wrap&quot;&gt;iuuuu</span><br><span class="line">    &lt;div class=&quot;layout-title&quot;&gt;</span><br><span class="line">       &lt;!--获取文章页面的标题并显示--&gt;</span><br><span class="line">        &lt;span&gt;&lt;%= page.title %&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;layout-wrap-inner tag-cloud&quot;&gt;</span><br><span class="line">        &lt;!--标签长度不为零，则设置最小的字体为14和最大字体为28--&gt;</span><br><span class="line">        &lt;% if(site.tags.length) &#123; %&gt;</span><br><span class="line">            &lt;%- tagcloud(&#123;min_font: 14, max_font: 28&#125;) %&gt;</span><br><span class="line">        &lt;% &#125; %&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/section&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（8）page.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引用commen/article.ej文章模版--&gt;</span><br><span class="line">&lt;%- partial(&apos;common/article&apos;, &#123;post: page, index: false&#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<p>（9）category.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引用时间线模版--&gt;</span><br><span class="line">&lt;%- partial(&apos;common/timeline&apos;, &#123; type: &apos;category&apos; &#125;) %&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2-comment评论模版"><a href="#2-comment评论模版" class="headerlink" title="2. comment评论模版"></a>2. comment评论模版</h5><p>读取配置,判断选择的模版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (post.comments) &#123; %&gt;</span><br><span class="line">    &lt;% if (theme.comment.disqus) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/disqus&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.duoshuo) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/duoshuo&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.youyan) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/youyan&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.facebook) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/facebook&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.isso) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/isso&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.changyan &amp;&amp; theme.comment.changyan.appid &amp;&amp; theme.comment.changyan.conf) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/changyan&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.livere) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/livere&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.valine &amp;&amp; </span><br><span class="line">        theme.comment.valine.on &amp;&amp; </span><br><span class="line">        theme.comment.valine.appId &amp;&amp; </span><br><span class="line">        theme.comment.valine.appKey) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/valine&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; else if (theme.comment.gitment &amp;&amp;</span><br><span class="line">        theme.comment.gitment.owner &amp;&amp;</span><br><span class="line">        theme.comment.gitment.repo &amp;&amp;</span><br><span class="line">        theme.comment.gitment.client_id &amp;&amp;</span><br><span class="line">        theme.comment.gitment.client_secret) &#123; %&gt;</span><br><span class="line">        &lt;section id=&quot;comments&quot;&gt;&lt;%- partial(&apos;comment/gitment&apos;) %&gt;&lt;/section&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="3-公共模版"><a href="#3-公共模版" class="headerlink" title="3. 公共模版"></a>3. 公共模版</h5><p>(1) 文章模版aritcle.ejs<br>(2) 脚部文件模版footer.ejs<br>(3) 头部模版header.ejs<br>(4) 网页头部模版head.ejs<br>(5) 简介模版profile.ejs<br>(6) js模版scripts.ejs<br>(7) 侧边栏模版sidebar.ejs<br>(8) 短文模版thumbnail.ejs<br>(9) 时间线模版timeline.ejs</p>
+
+            
+          
+        </div>
+
+    
+      <!-- 首页文章footer内容-->
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <footer class="article-footer">
+          <div class="share-container">
+
+
+    <!---->
+<div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">微博</a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网">豆瓣</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+//.src='http://bdimg.share.baidu.com
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+          
+    
+
+          
+          <!-- 文字字数统计
+          <div id="" class="page-static" style="display: inline;">
+              <span class="post-count">本文字数:&nbsp;1.5k</span>
+          </div>  -->          
+      </footer>
+     
+
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/09/23/Gitment/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Gitment评论功能
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/09/15/How-to-sell-a-lobster/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">《怎么卖龙虾》读书笔记</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+    
+
+
+
+<scrpt>
+
+
+</section>
+            
+               <!--网站的侧边栏-->
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/13/python-issue/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/13/python-issue/" class="title">python遇到的坑</a></p>
+                            <p class="item-date"><time datetime="2018-10-13T10:32:02.000Z" itemprop="datePublished">2018-10-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/10/mindmangement/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/10/mindmangement/" class="title">MindManager中文破解+教程</a></p>
+                            <p class="item-date"><time datetime="2018-10-10T04:32:02.000Z" itemprop="datePublished">2018-10-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/09/django/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/09/django/" class="title">django教程</a></p>
+                            <p class="item-date"><time datetime="2018-10-09T04:32:02.000Z" itemprop="datePublished">2018-10-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/09/git-config/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/09/git-config/" class="title">Win10系统Python虚拟环境virtualenv安装和使用</a></p>
+                            <p class="item-date"><time datetime="2018-10-09T04:32:02.000Z" itemprop="datePublished">2018-10-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/23/Gitment/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/09/23/Gitment/" class="title">Gitment评论功能</a></p>
+                            <p class="item-date"><time datetime="2018-09-23T13:32:02.000Z" itemprop="datePublished">2018-09-23</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width=100%">
+                <a href="/tags/python/" style="font-size: 18px; color: #cc0080">python</a> <a href="/tags/gitment/" style="font-size: 13px; color: #90f">gitment</a> <a href="/tags/static/" style="font-size: 13px; color: #90f">统计</a> <a href="/tags/笔记/" style="font-size: 13px; color: #90f">笔记</a> <a href="/tags/营销/" style="font-size: 13px; color: #90f">营销</a> <a href="/tags/读书笔记/" style="font-size: 13px; color: #90f">读书笔记</a> <a href="/tags/hexo/" style="font-size: 23px; color: #f00">hexo</a> <a href="/tags/django/" style="font-size: 13px; color: #90f">django</a> <a href="/tags/virtualenv/" style="font-size: 13px; color: #90f">virtualenv</a> <a href="/tags/tag-cloud/" style="font-size: 13px; color: #90f">tag-cloud</a> <a href="/tags/command/" style="font-size: 13px; color: #90f">command</a> <a href="/tags/MindManager/" style="font-size: 13px; color: #90f">MindManager</a>
+            </canvas>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://www.iresearch.cn/">艾瑞</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://alizs.taobao.com/area?spm=a2oaa.11242873.0.0.4c97224dfKOvKO">阿里指数</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.analysys.cn/analysis/data/">易观</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.zcool.com.cn/">站酷</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fas fa-angle-up"></div>
+</aside>
+
+             
+          
+        </div>
+        <!--网站的脚部文件
+        <!--网站footer内容-->
+   <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            <span stye="float:left;">
+                 &copy; 2017-2019
+                Iamliwei<span>&nbsp;&nbsp;&nbsp;</span>
+            </span>
+            
+            
+            <!--网站访问用户和访问量统计-->
+            <!--网站访问用户统计，一个IP只统计一次-->
+            <span id="">
+              <span id="site-visit" title="总访客">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <span id="busuanzi_value_site_uv"></span>
+              </span>
+            </span
+            
+            <span>&nbsp;|&nbsp;</span>
+            <!--网站访问量统计-->
+            <span id="" style="display: inline;">
+              <span id="page-visit" title="总访问量">
+                <i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i>
+                <span id="busuanzi_value_site_pv"></span>
+              </span>
+            </span>  
+        </div>         
+    </div>
+</footer>
+<script>
+    // 百度统计，用于站长分析
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?db682a789798bec0e83499238dd0cf82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+        <!--网页的scrpit文件-->
+        
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+        <!-- 页面点击小红心 -->
+        <script type="text/javascript" src="/js/src/love.js"></script>
+
+
+    </div>
+</body>
+</html>
