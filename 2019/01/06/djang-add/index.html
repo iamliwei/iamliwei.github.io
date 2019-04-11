@@ -6,19 +6,20 @@
     
 
 
-    <title>photos | PM小站</title>
+    <title>django实现数据弹窗数据添加 | PM小站</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="PM,产品经理,项目经理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="photos">
-<meta property="og:url" content="http://iliwei.github.io/photos/index.html">
+    <meta name="description" content="silder.js侧边弹窗,实现试题添加功能 model‘’’    class Ques(models.Model): # 单选题  sections = models.ForeignKey(Section, verbose_name=&amp;apos;学段&amp;apos;, on_delete=models.CASCADE, blank=True, null=True, ) subjects = mod">
+<meta name="keywords" content="django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django实现数据弹窗数据添加">
+<meta property="og:url" content="http://iliwei.github.io/2019/01/06/djang-add/index.html">
 <meta property="og:site_name" content="PM小站">
-<meta property="og:description" content="PM,产品经理,项目经理">
+<meta property="og:description" content="silder.js侧边弹窗,实现试题添加功能 model‘’’    class Ques(models.Model): # 单选题  sections = models.ForeignKey(Section, verbose_name=&amp;apos;学段&amp;apos;, on_delete=models.CASCADE, blank=True, null=True, ) subjects = mod">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-22T14:50:03.124Z">
+<meta property="og:updated_time" content="2019-04-11T09:04:40.914Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="photos">
-<meta name="twitter:description" content="PM,产品经理,项目经理">
+<meta name="twitter:title" content="django实现数据弹窗数据添加">
+<meta name="twitter:description" content="silder.js侧边弹窗,实现试题添加功能 model‘’’    class Ques(models.Model): # 单选题  sections = models.ForeignKey(Section, verbose_name=&amp;apos;学段&amp;apos;, on_delete=models.CASCADE, blank=True, null=True, ) subjects = mod">
     
 
     
@@ -220,7 +221,7 @@
 
             
             <!--文章主题内容-->
-            <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-djang-add" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -231,10 +232,30 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            photos
+            django实现数据弹窗数据添加
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        <!--首页显示时间和标签内容-->
+                        
+    <div class="article-date">
+        <i class="fas fa-calendar-alt"></i>
+        <a href="/2019/01/06/djang-add/">
+            <time datetime="2019-01-06T10:32:02.000Z" itemprop="datePublished">2019-01-06</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/django/">django</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -250,7 +271,154 @@
             
             
               <!--如果不是首页则玩显示-->
-              
+              <p>silder.js侧边弹窗,实现试题添加功能</p>
+<h4 id="model"><a href="#model" class="headerlink" title="model"></a>model</h4><p>‘’’<br>    class Ques(models.Model):</p>
+<pre><code># 单选题
+
+sections = models.ForeignKey(Section, verbose_name=&apos;学段&apos;, on_delete=models.CASCADE, blank=True, null=True, )
+subjects = models.ForeignKey(Subject, verbose_name=&apos;学科&apos;, on_delete=models.CASCADE, blank=True, null=True, )
+questype = models.ForeignKey(QuesType, verbose_name=&quot;题型&quot;, on_delete=models.CASCADE, blank=True, null=True,)
+level = models.ForeignKey(Level, verbose_name=&quot;难易度&quot;, on_delete=models.CASCADE, blank=True, null=True,)
+knowledge = models.ManyToManyField(MPTTLedge, verbose_name=&quot;知识点&quot;,  blank=True, null=True,)
+
+score = models.FloatField(&apos;分值&apos;,  blank=True, default=0.0)
+author = models.CharField(&apos;作者&apos;, null=True, blank=True, max_length=50)
+add_time = models.DateTimeField(&quot;添加时间&quot;, default=datetime.now, )
+update_time = models.DateTimeField(&quot;更新时间&quot;, default=datetime.now, )
+
+content=RichTextField(blank=True,null=True,verbose_name=&quot;题干&quot;)
+answer=RichTextField(blank=True,null=True,verbose_name=&quot;答案&quot;)
+analysis = RichTextField(blank=True,null=True,verbose_name=&quot;解析&quot;)
+quote_times = models.IntegerField(&quot;使用次数&quot;, default=0)
+fav_nums = models.IntegerField(&quot;收藏人数&quot;, default=0)
+click_nums = models.IntegerField(&quot;点击数&quot;, default=0)
+tag = models.CharField(&apos;试题标签&apos;, default=&apos;&apos;, max_length=10,null=True, blank=True, )
+
+class Meta:
+    verbose_name = &quot;试题&quot;
+    verbose_name_plural = verbose_name
+
+def __str__(self):
+    return self.author
+</code></pre><p>‘’’</p>
+<h4 id="urls"><a href="#urls" class="headerlink" title="urls"></a>urls</h4><p>‘’’<br>    urlpatterns = [</p>
+<pre><code>    # shiti列表
+    path(&apos;&apos;,ShitiListView.as_view(),name=&apos;shiti&apos;),
+    # 添加功能
+    re_path(&apos;add_ques$&apos;,AddQuesViews.as_view(),name=&quot;add_ques&quot;),
+]
+</code></pre><p>‘’’</p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><pre><code>{% if request.user.is_authenticated %}
+    <div class="wrap add-dialog" id="add-dialog">
+        <form action="add_ques" method="POST">
+        {% csrf_token%}
+            <div class="add-dialog-header">
+                <div class="header-title">新增试题</div>
+                <div class="iClose" id="add_btnClose"><i class="fa fa-close"></i></div>
+            </div>
+            {% if section_id or subject_id %}
+
+            {% else %}
+                <input type="text" style="display: none" name="add_author" value="{{ user.username }}">
+            <div class="dialog-form">
+                <label>学段:</label>
+                <select class="dialog-select" name="add_section_id">
+                    {% for section in all_section %}
+                        <option value="{{ section.id }}">{{ section.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="dialog-form">
+                <label style="padding-left:18px;">学科:</label>
+                <select class="dialog-select" name="add_subject_id">
+                     {% for subject in all_subject %}
+                        <option value="{{ subject.id }}">{{ subject.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+        &lt;div stle=&quot;padding:10px;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;dialog-form&quot;&gt;
+            &lt;label style=&quot;padding-top:10px;&quot;&gt;题型:&lt;/label&gt;
+            &lt;select class=&quot;dialog-select&quot;  name=&quot;add_questype_id&quot;&gt;
+                 {% for questype in all_questype %}
+                        <option value="{{ questype.id }}">{{ questype.name }}</option>
+                    {% endfor %}
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dialog-form&quot; &gt;
+            &lt;label &gt;难易度:&lt;/label&gt;
+            &lt;select class=&quot;dialog-select&quot; name=&quot;add_level_id&quot;&gt;
+                {% for level in all_level %}
+                        <option value="{{ level.id }}">{{ level.name }}</option>
+                    {% endfor %}
+            &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div stle=&quot;padding:10px;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;dialog-form&quot; &gt;
+            &lt;label&gt;分数:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;dialog-select&quot; name=&quot;add_score&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;dialog-form&quot; &gt;
+            &lt;label &gt;知识点:&lt;/label&gt;
+            &lt;select class=&quot;dialog-select&quot; name=&quot;add_knowledge&quot;&gt;
+            {% recursetree  nodes %}
+                <option>
+                {% if  not  node.is_leaf_node %}
+                    <span>-</span>
+                {% endif %}
+                    <span class="i-vertical"></span>
+                    <span class="i-line" value="{{node.id }}">-</span>
+                    {{node.name }}
+                {% if  not  node.is_leaf_node %}
+                    </option><option class="ji-chapter" style="display: block;" id="parent_dl" value="{{  children  }}">
+                       -{{  children  }}
+                    </option>
+                {% endif  %}
+                
+                {% endrecursetree %}
+
+            &lt;/select&gt;
+        &lt;/div&gt;
+
+        &lt;div stle=&quot;padding:10px;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;dialog-form-textarea&quot; style=&quot;clear:both;&quot; &gt;
+            &lt;div class=&quot;label&quot;&gt;题干:&lt;/div&gt;
+            &lt;div style=&quot;padding-left:40px;&quot;&gt;
+                &lt;textarea name=&quot;add_content&quot; id=&quot;add_content&quot;class=&quot;dialog-textarea&quot; &gt;
+
+                &lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div stle=&quot;padding:10px;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;dialog-form-textarea&quot; &gt;
+            &lt;div class=&quot;label&quot;&gt;答案:&lt;/div&gt;
+            &lt;div style=&quot;padding-left:40px;&quot;&gt;
+                &lt;textarea class=&quot;dialog-textarea&quot; name=&quot;add_answer&quot; id=&quot;add_answer&quot; &gt;
+
+                &lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div stle=&quot;padding:10px;&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;dialog-form-textarea&quot; &gt;
+            &lt;div class=&quot;label&quot;&gt;解析:&lt;/div&gt;
+            &lt;div style=&quot;padding-left:40px;&quot;&gt;
+                &lt;textarea class=&quot;dialog-textarea &quot; name=&quot;add_anlysis&quot; id=&quot;add_anlysis&quot;&gt;
+                &lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;btnDialog&quot; style=&quot;padding-bottom: 40px;&quot;&gt;
+            &lt;button id=&quot;submit&quot;  class=&quot;m-btn&quot; &gt;确定&lt;/button&gt;
+            &lt;button id=&quot;add_btnCancel&quot;  class=&quot;m-btn&quot;style=&quot;background-color: #546a79; &quot;&gt;取消&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;script&gt;
+    CKEDITOR.replace( &apos;add_content&apos;);
+    CKEDITOR.replace( &apos;add_answer&apos;);
+    CKEDITOR.replace( &apos;add_anlysis&apos;);
+&lt;/script&gt;
+</form></div></code></pre>
             
           
         </div>
@@ -306,7 +474,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
           
           <!-- 文字字数统计
           <div id="" class="page-static" style="display: inline;">
-              <span class="post-count">本文字数:&nbsp;0</span>
+              <span class="post-count">本文字数:&nbsp;791</span>
           </div>  -->          
       </footer>
      
@@ -314,6 +482,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
     
         
+<nav id="article-nav">
+    
+        <a href="/2019/04/01/django-admin/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    django-admin和manage.py
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/10/13/python-issue/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">python遇到的坑</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
